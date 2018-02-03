@@ -2,7 +2,6 @@ package com.talsist.service;
 
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specifications;
@@ -23,7 +22,6 @@ public class BoardService {
     private BoardRepository boardRepo;
     private CommentRepository commentRepo;
 
-    @Autowired
     public BoardService(BoardRepository boardRepo, CommentRepository commentRepo) {
         this.boardRepo = boardRepo;
         this.commentRepo = commentRepo;

@@ -1,8 +1,6 @@
 package com.talsist.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -24,7 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     private UserDetailsService userDetailsService;
 
-    @Autowired
     public SecurityConfig(UserDetailsService customUserDetailsService) {
         this.userDetailsService = customUserDetailsService;
     }

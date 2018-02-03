@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -31,7 +30,6 @@ public class BoardController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private BoardService boardSvc;
 
-    @Autowired
     public BoardController(BoardService boardSvc) {
         this.boardSvc = boardSvc;
     }

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.rememberme.PersistentRememberMeToken;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -15,10 +14,16 @@ import com.talsist.repository.UserRepository;
 
 public class PersistentTokenRepositoryImpl implements PersistentTokenRepository {
 
-    @Autowired
     private PersistentLoginsRepository persistentLoginsRepository;
-    @Autowired
     private UserRepository userRepository;
+
+    public void setPersistentLoginsRepository(PersistentLoginsRepository persistentLoginsRepository) {
+        this.persistentLoginsRepository = persistentLoginsRepository;
+    }
+
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public void createNewToken(PersistentRememberMeToken token) {
